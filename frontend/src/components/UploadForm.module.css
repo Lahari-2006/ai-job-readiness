@@ -1,0 +1,304 @@
+/* UploadForm.module.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.labelNum {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+}
+
+/* ── Drop Zone ─────────────────────────────────────── */
+.dropZone {
+  border: 1.5px dashed var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--bg-surface);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropZone:hover,
+.dropZone:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  outline: none;
+}
+
+.dragging {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  transform: scale(1.01);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.hasFile {
+  border-style: solid;
+  border-color: var(--border-default);
+}
+
+.dropPrompt {
+  text-align: center;
+  pointer-events: none;
+}
+
+.dropIcon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dropLabel {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.dropHint {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── File Info ─────────────────────────────────────── */
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.fileIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.fileName {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.fileSize {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.removeBtn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.removeBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: var(--red-dim);
+}
+
+/* ── Mode Toggle ───────────────────────────────────── */
+.modeToggle {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.modeBtn {
+  background: none;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font-body);
+  transition: all var(--transition);
+}
+
+.modeBtn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.modeBtnActive {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Textarea ──────────────────────────────────────── */
+.textArea {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 16px;
+  resize: vertical;
+  transition: border-color var(--transition);
+  min-height: 180px;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.textArea::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── AWS Toggle ────────────────────────────────────── */
+.awsToggle {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.toggleText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.toggleText strong {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.toggleHint {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.localMode {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  padding: 6px 10px;
+  background: var(--accent-dim);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Submit Button ─────────────────────────────────── */
+.submitBtn {
+  background: var(--accent);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 32px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn:hover:not(.submitDisabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.submitBtn:active:not(.submitDisabled) {
+  transform: translateY(0);
+}
+
+.submitDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.loadingInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(10, 11, 15, 0.3);
+  border-top-color: var(--text-inverse);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.validationHint {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-mono);
+}

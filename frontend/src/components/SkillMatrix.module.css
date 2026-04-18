@@ -1,0 +1,212 @@
+/* SkillMatrix.module.css */
+
+.matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease 0.1s both;
+}
+
+/* ── Skills Grid ────────────────────────────────────── */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .skillsGrid { grid-template-columns: 1fr; }
+}
+
+.skillCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.cardIcon {
+  width: 24px;
+  height: 24px;
+  background: var(--green-dim);
+  color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cardIconRed {
+  composes: cardIcon;
+  background: var(--red-dim);
+  color: var(--red);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.badgeGreen {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid var(--green-mid);
+}
+
+.badgeRed {
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid var(--red-mid);
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.matched {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid var(--green-mid);
+}
+
+.missing {
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid var(--red-mid);
+}
+
+.chipDot {
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Category Breakdown ──────────────────────────────── */
+.breakdown {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.breakdownTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.breakdownIcon {
+  font-size: 18px;
+}
+
+.catList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.catRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 6px 10px;
+  align-items: center;
+}
+
+.catHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.catEmoji {
+  font-size: 14px;
+}
+
+.catName {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.catScore {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.catPct {
+  grid-row: 2;
+  grid-column: 2;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: right;
+}
+
+.catBarTrack {
+  grid-row: 2;
+  grid-column: 1;
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.catBarFill {
+  height: 100%;
+  background: var(--bar-color, var(--accent));
+  border-radius: 3px;
+  animation: barFill 1s cubic-bezier(0.4,0,0.2,1) both;
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+}
